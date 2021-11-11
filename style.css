@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Explora&family=Italianno&family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918&display=swap');
+
+
+:root{
+--cor0: white;
+--cor1: black;
+--cor2: #4696EB;
+--cor3: #4563F5;
+--cor4: #6551DB;
+--cor5: #9C4EF2;
+--font0: sans-serif; /*Padrão para textos*/
+--font1: 'Dancing Script', cursive; /*Letra serifada de escrita a mão*/
+--font2: 'Sansita Swashed', cursive; /*Letra serifara de escrita a mão +leve*/
+--font3: 'Libre Baskerville', serif; /*Letra serifada para títulos*/
+--font4: 'Brygada 1918', serif; /*Letra serifada cirílica*/
+}
+
+*{margin: 0; padding: 0; font-size: 100%; box-sizing: border-box;}
+    ul, li{list-style: none;}
+    a{text-decoration: none; opacity: 0.7; font-size: 1.3rem;}
+    a:hover{opacity: 1;}
+    p::first-letter{margin-left: 20px; font-size: 1.5em;}
+
+
+body{background-image: linear-gradient(180deg, var(--cor5), var(--cor4),var(--cor3), var(--cor2)); background-attachment: fixed;}
+
+/*HEADER*/ 
+header{background-color: rgba(255, 255, 255, 0.13); padding: 25px; text-align: center;}
+header h1{color: var(--cor1); font-size: 50px; font-family: var(--font3);}
+header p{font-family: var(--font2); font-size: 20px;}
+
+/*NAV*/
+nav{background-color: rgba(255, 255, 255, 0.13); font-family: var(--font3); box-shadow: 1px 1px 1px black;}
+nav .container{display: flex; flex-direction: row; }
+nav a{padding: 10px; color: white;}
+@media (max-width: 500px){nav .container{flex-direction:column;}}
+
+/*MAIN*/
+main{padding: 30px;}
+main .container{display: flex; justify-content:space-around; font-size: 1.1em; font-family: var(--font3); line-height: 30px; text-align: justify;  flex-flow: row nowrap ;}
+main .container article{margin: 50px; max-width: 350px;}
+main article{margin-left: 15%;}
+@media(max-width:950px){main .container{flex-flow: column; align-items: center; font-size: 0.8em;}
+main article{margin-left: 5%;}}
+
+/*ARTICLE*/
+article{background-color: white; border-radius: 20px; padding: 15px; margin-top: 20px; text-align: center; box-shadow: 2px 2px 1px black; max-width: 70%;}
+article h1{font-family: var(--font3); font-size: 20px;}
+article h2{font-family: var(--font3); font-size: 20px;}
+article p{padding-top: 10px; font-size: 0.9em; font-family: var(--font3); line-height: 30px; text-align: justify;}
+@media(max-width:950px){article{max-width: 90%;}}
+
+
+/*FOOTER*/
+footer{background-color: var(--cor2); color: white; text-align: center; height: 30px; padding: 10px;}
+
+/*ID*/
+#map{display: flex; justify-content: center; margin: 30px;}
+#trajetoria-footer{margin-top: 10%;}
+#contato article{max-width: 70%;display: flex; flex-direction: row; margin-left: 15%;}
+@media(max-width:800px){#contato article{flex-direction: column;} #contato div{margin-bottom: 20px; font-size: 0.7em;}}
+#contato div{margin: 20px; }
+
+/*CLASS*/
+.imagem-redonda{border-radius: 50%;}
+.video{display: flex; width: 100%; height: 100%; justify-content: center;}
+.flip-container{width: 400px; height: 400px; perspective: 1000px; align-items: center;}
+.flipper{  width: 100%; height: 100%; transition: 0.8s; transform-style: preserve-3d; position: relative; text-align: center; color: white;}
+.flip-container:hover .flipper{transform: rotateY(180deg);/* se quiser uma animação na vertical, troque por rotateX(180deg)*/}
+.front, .back{width: 100%; height: 100%; position: absolute; backface-visibility: hidden;}
+.back{transform: rotateY(180deg); margin-top: 20%;}
+.front {font-size: 5rem; margin-top: 30%;}
+.trajetoria {margin-top: 10%;}
+.logo{max-width: 300px} .logo h2{font-size: 1.3em;} .logo img{width: 50px;} .logo p{text-align: center;}
